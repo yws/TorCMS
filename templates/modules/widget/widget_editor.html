@@ -1,0 +1,16 @@
+{% if userinfo %}
+
+{% if userinfo.role[2] > '1' %}
+<span class="cmts"><a href="/{{kwd['router']}}/edit/{{ kwd['uid']  }}" class="btn btn-xs btn-danger">Edit</a></span>
+
+{% elif userinfo.role[0] > '0' %}
+<span class="cmts"><a href="/{{ 'wiki' if kwd['router'] == 'wiki' else 'meta' }}_man/edit/{{kwd['uid'] }}"
+                      class="btn btn-xs btn-danger">EditInfo</a></span>
+{% end %}
+
+{% if userinfo.role[2] >= '2' %}
+<span class="cmts"><a href="/{{ 'wiki' if kwd['router'] == 'wiki' else 'meta' }}_man/view/{{ kwd['uid']  }}"
+                      class="btn btn-xs btn-danger"> Manage</a></span>
+{% end %}
+
+{% end %}
