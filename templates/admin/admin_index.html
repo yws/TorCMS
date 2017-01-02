@@ -3,13 +3,11 @@
 <script type="text/javascript">
     function js_show_page(url_str) {
         $('#showCnt').load(url_str);
-
-
     }
 
     jQuery().ready(function () {
         $("#user_navigation").accordion();
-        js_show_page('/user/p/info');
+        js_show_page('/user_j/info');
     });
 </script>
 
@@ -80,10 +78,10 @@
                         class="glyphicon glyphicon-s glyphicon-plus  pull-right"></em></span>
                 </a>
                 <ul class="children collapse" id="sub-item-2">
-                    <li><a onclick="js_show_page('/post/p/add_document')"><span
+                    <li><a onclick="js_show_page('/post_j/add_document')"><span
                             class="glyphicon glyphicon-share-alt"></span>添加信息</a></li>
-                    <li><a onclick="js_show_page('/post/p/recent')"><span class="glyphicon glyphicon-share-alt"></span>所有信息</a>
-                   <!-- <li><a onclick="js_show_page('/post/p/recent_none')"><span class="glyphicon glyphicon-share-alt"></span>待翻译文档</a>
+                    <li><a onclick="js_show_page('/post_j/recent')"><span class="glyphicon glyphicon-share-alt"></span>所有信息</a>
+                   <!-- <li><a onclick="js_show_page('/post_j/recent_none')"><span class="glyphicon glyphicon-share-alt"></span>待翻译文档</a>
                     </li>-->
 
                 </ul>
@@ -92,7 +90,8 @@
 
             <li class="parent ">
                 <a href="#">
-                    <span class="glyphicon glyphicon-list"></span> <span data-toggle="collapse" href="#sub-item-3"
+                    <span class="glyphicon glyphicon-list"></span>
+                    <span data-toggle="collapse" href="#sub-item-3"
                                                                          class="icon"> 链接管理<em
                         class="glyphicon glyphicon-s glyphicon-plus  pull-right"></em></span>
                 </a>
