@@ -1,0 +1,48 @@
+{% extends "theme/bage.html" %}
+
+
+{% block mainbody %}
+
+
+<div class="row">
+    <div class="col-sm-9">
+
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="col-sm-3">
+        <div class="sidebar">
+
+
+            <div id="list-group">
+                <div class="panel-heading2">
+                    <div class="panel-title">
+                        Most attention
+                    </div>
+                </div>
+                <ul class="list-group" id="mostall">
+                </ul>
+
+            </div>
+            <div id="list-group">
+                <div class="panel-heading2">
+                    <div class="panel-title">Recent articles</div>
+                </div>
+                <ul class="list-group">
+                </ul>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"> Classified catalogue</h3>
+                </div>
+
+
+                <ul class="list-group">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
