@@ -19,7 +19,8 @@
 
 {% block zhuti %}
 
-
+<h1>asfd</h1>
+<h2>{{ test }}</h2>
 
 <bR>
 <div class="row">
@@ -60,6 +61,8 @@
 
             <ul class="list-group" id="list-group">
                 <li class="panel-heading2"><a>News</a></li>
+
+                {{ post_recent( num = 3, with_catalog = False)|safe }}
 
             </ul>
         </div>

@@ -1,0 +1,91 @@
+{% extends "tmpldoc/tmpldoc.html" %}
+
+{% block head %}
+
+<meta name="keywords" content="{{ postinfo.keywords }} ">
+<meta name="description" content="">
+
+<script>
+    $.get('/post/j_count_plus/{{postinfo.uid}}');
+</script>
+
+{% endblock %}
+
+{% block content %}
+<ol class="breadcrumb">
+    <li>Current location: <a href="">Home</a></li>
+    <li></li>
+    <li class="active">{{ postinfo.title }}</li>
+</ol>
+<div class="panel panel-default">
+
+
+    <div class="panel-heading">
+
+
+        <h2>{{ postinfo.title }}</h2>
+        <span>{{ postinfo.date }}</span>
+        <span>Author: <a href="http://www.osgeo.cn/">OSGeo中国中心</a></span>
+        <span>Browse: {{ postinfo.view_count }} 次</span>
+
+
+
+    </div>
+    <div class="panel-body">
+        <div class="entry">
+            <p class="summary"><strong>Abstract</strong>:  </p>
+            <div class="entrycontent">
+                {{ postinfo.cnt_html | safe }}
+            </div>
+        </div>
+
+        <div class="postmeta">
+            <div class="wpyouvote"></div>
+            <div class="clear"></div>
+            <br>
+            <strong>Article link:</strong>
+            <a href="/post/{{postinfo.uid}}" class="underline"> {{ postinfo.title }}</a>
+            <br/>
+            <strong>Copyright:</strong> Non special statement are original articles, reproduced please indicate the
+            source：
+            <a href="http://osgeo.cn" class="underline">OSGeo中国中心</a><br>
+
+
+        </div>
+        <bR>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Related reading
+            </div>
+            <ul class="list-group">
+                {% for s in relations %}
+                <li class="list-group-item">
+                    <a href="/post/{{ s.post.uid }}">
+                        <span class="glyphicon glyphicon-list-alt"></span> {{ s.post.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+    <p style="border-bottom: 1px dashed #dddddd; margin-bottom: 20px">&nbsp;</p>
+
+
+
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="btn btn-primary"></div>
+                <div class="btn btn-primary"></div>
+            </div>
+            <div class="col-sm-6">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

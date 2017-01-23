@@ -1,0 +1,12 @@
+{% for x in recs %}
+
+<li class="list-group-item"><a href="/post/{{ x.uid }}" title="{{x.title}}">{{x.title}}</a>
+    {% if kwd['with_catalog'] %}
+    <span class="post_cat"></span>
+    {% endif %}
+    {% if kwd['with_date'] %}
+    <em class="date">{{ str(x.date)[:-15]}}</em>
+    {% endif %}
+</li>
+
+{% endfor %}
