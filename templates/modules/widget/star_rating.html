@@ -16,18 +16,7 @@
             </form>
 
             <script>
-                function update_postrating() {
-                    $.ajax({
-                        url: '/_rating/_updatepost/{{postinfo.uid}}',
-                        type: 'POST',
-                        dataType: 'html',
-                        timeout: 1000,
-                        error: function () {
-                        },
-                        success: function (result) {
-                        }
-                    });
-                }
+
                 jQuery(document).ready(function () {
 
 
@@ -41,7 +30,6 @@ timeout: 1000,
 error: function(){alert('Error')},
 success: function(result){
 
-update_postrating();
 }
 
 });
