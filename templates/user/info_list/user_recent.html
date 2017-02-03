@@ -1,7 +1,5 @@
 {% extends "../../theme/bage.html" %}
 
-
-
 {% block mainbody %}
 
 <ol class="breadcrumb">
@@ -14,7 +12,8 @@
         Recent use
     </div>
    <ul class="list-group">
-       {% module app_user_recent(userinfo.uid,'2',20) %}
+
+       {% module app_recent_used('9', 20, userinfo = userinfo) %}
 
     </ul>
     <div class="panel-footer">
