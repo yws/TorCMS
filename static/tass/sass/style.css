@@ -1,17 +1,16 @@
 /*
-Error: File to import not found or unreadable: bootstrap-compass.
-        on line 2 of style.sass
+Error: File to import not found or unreadable: compass/reset.
+        on line 1 of style.sass
 
-1: //@import "compass/reset"
+1: @import "compass/reset"
 2: @import "bootstrap-compass"
 3: @import "bootstrap-sprockets"
 4: @import "bootstrap-variables"
 5: @import "bootstrap"
 6: @import "compass/typography"
-7: @import "carousel"
 
 Backtrace:
-style.sass:2
+style.sass:1
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -54,4 +53,4 @@ style.sass:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: bootstrap-compass.\A         on line 2 of style.sass\A \A 1: //@import \"compass/reset\"\A 2: @import \"bootstrap-compass\"\A 3: @import \"bootstrap-sprockets\"\A 4: @import \"bootstrap-variables\"\A 5: @import \"bootstrap\"\A 6: @import \"compass/typography\"\A 7: @import \"carousel\""; }
+  content: "Error: File to import not found or unreadable: compass/reset.\A         on line 1 of style.sass\A \A 1: @import \"compass/reset\"\A 2: @import \"bootstrap-compass\"\A 3: @import \"bootstrap-sprockets\"\A 4: @import \"bootstrap-variables\"\A 5: @import \"bootstrap\"\A 6: @import \"compass/typography\""; }
