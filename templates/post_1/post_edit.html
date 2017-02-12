@@ -12,18 +12,18 @@
 {% block content %}
 <div class="panel panel-default">
     <div class="panel-heading"> 您的位置: <a href="{% module site_url() %}">首页</a> >
-        {{ dbrec.title }}-修改文档
+        {{ postinfo.title }}-修改文档
     </div>
     <div class="panel-body">
 
 
-        <form action="/post/modify/{{dbrec.uid}}" method="post" class="form-horizontal" role="form" id="form_post">
+        <form action="/post/modify/{{postinfo.uid}}" method="post" class="form-horizontal" role="form" id="form_post">
 
 
             <fieldset>
 
 
-                <input type="hidden" id="id_post" name="id_post" value="{{ dbrec.uid }}"/>
+                <input type="hidden" id="id_post" name="id_post" value="{{ postinfo.uid }}"/>
 
 
                 <div class="form-group">
@@ -32,7 +32,7 @@
                     <label for="title" class="col-sm-2 control-label">标题</label>
 
                     <div class="col-sm-10">
-                        <input type="text" id="title" name="title" value="{{ dbrec.title }}"  class="form-control"/>
+                        <input type="text" id="title" name="title" value="{{ postinfo.title }}"  class="form-control"/>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                     <label for="keywords" class="col-sm-2 control-label">关键词</label>
 
                     <div class="col-sm-10">
-                        <input id="keywords" name="keywords" type="text" value="{{ dbrec.keywords }}" class="form-control">
+                        <input id="keywords" name="keywords" type="text" value="{{ postinfo.keywords }}" class="form-control">
                     </div>
                 </div>
 
@@ -112,7 +112,7 @@
                     <label for="logo" class="col-sm-2 control-label">特色图片</label>
 
                     <div class="col-sm-10">
-                        <input id="logo" name="logo" type="text" value="{{ dbrec.logo }}" class="form-control"/>
+                        <input id="logo" name="logo" type="text" value="{{ postinfo.logo }}" class="form-control"/>
 
 
                     </div>
@@ -135,7 +135,7 @@
 
                     <div class="col-sm-10">
             <textarea rows=26 id="cnt_md" name="cnt_md" cols="80" class="form-control">
-                {% raw unescape(dbrec.cnt_md) %}
+                {% raw unescape(postinfo.cnt_md) %}
             </textarea>
                     </div>
                 </div>
