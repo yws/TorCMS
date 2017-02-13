@@ -12,18 +12,15 @@
         {{ kwd['title'] }}
     </div>
 
-
-
         <ul class="list-group">
             {% for x in srecs %}
             <li class="list-group-item"><a href="{% raw x['link'] %}" title="{{x['title']}}">{% raw x['type'] %}
                 {{x['title']}}</a><br/>
+                [ {{ x['catid'] }} ] <br />
                 <span style="color: #888;">{% raw (x.highlights('content')) %}</span>
             </li>
             {% end %}
-
         </ul>
-
 
     <div class="panel-footer">
 
