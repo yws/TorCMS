@@ -1,0 +1,52 @@
+{% extends "../../theme/bage.html" %}
+
+{% block head %}
+
+<title>GISLite，轻量地理信息平台解决方案</title>
+
+<meta name="description"
+      content="开放地理空间实验室由科学家与工程师维护的，专注建设网站。华图科技提供网站建设、网站设计、网站制作网站优化、专利注册、专利申请服务。">
+<meta name="keywords"
+      content="开放地理空间实验室,长春网站建设,长春网站设计,长春网站制作,python网站制作,吉林网站建设,网站模板,专利申请">
+
+{% end %}
+
+{% block mainbody %}
+
+
+
+<div class="panel panel-default">
+<div class="panel-heading">文档列表</div>
+    <div class="panel-body">
+
+        <form class="navbar-form " role="form" method="post" id="find_calc" action="/search/">
+    <input type="hidden" id="searchcat" name="searchcat" value="">
+    <div class="row">
+        <div class="col-sm-3" >
+            <div class="input-group" >
+                <div class="input-group-btn">
+                   <button type="button" class="btn btn-default
+                     dropdown-toggle" data-toggle="dropdown" id="widget_search_label">
+                     All
+                  </button>
+
+                    <ul class="dropdown-menu pull-right">
+
+                        <li><a onclick="$('#widget_search_label').text('全部');$('#searchcat').val('');" >All</a></li>
+                        <li><a onclick="$('#widget_search_label').text('文档');$('#searchcat').val('1');" >文档</a></li>
+                        <li><a onclick="$('#widget_search_label').text('信息');$('#searchcat').val('9');" >信息</a></li>
+                        <li><a onclick="$('#widget_search_label').text('地图');$('#searchcat').val('m');" >地图</a></li>
+                    </ul>
+                </div>
+                <input id="keyword" name="keyword" type="text" class="form-control" placeholder="Input key words">
+            </div></div>
+        <div class="col-sm-3">
+            <button type="submit" id="search_app_submit" name="search_app_submit" class="btn btn-default" >Search</button>
+    </div></div>
+</form>
+
+    </div>
+</div>
+
+
+{% end %}
