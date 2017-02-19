@@ -18,107 +18,111 @@
 
 
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-    <div id="user_navigation">
-        <ul class="nav menu">
-            <li class="active">
-                <a onclick="js_show_page('/user_p/info')"> <span class="glyphicon glyphicon-user"></span>
-                用户信息</a></li>
-            <li><a onclick="js_show_page('/user_p/info')"><span class="glyphicon glyphicon-cog"></span>会员状态</a></li>
-            <!--<li><a onclick="js_show_page('/user/p/changelang')"><span class="glyphicon glyphicon-stats"></span>设置语言</a>
-            </li>-->
-            <li><a onclick="js_show_page('/user_p/changepass')"><span class="glyphicon glyphicon-pencil"></span>修改密码</a>
-            </li>
-            <li><a onclick="js_show_page('/user_p/changeinfo')">
-                <span class="glyphicon glyphicon-pencil"></span>修改个人信息</a>
-            </li>
-            {% if userinfo.role[2] >= 'c' %}
-            <li><a onclick="js_show_page('/user_p/find')"><span class="glyphicon glyphicon-info-sign"></span>查看所有用户</a>
-            </li>
-            {% end %}
+    <div class="panel-group" id="accordion">
 
-            <!--
-            <li><a onclick="js_show_page('/user/logout')"><span class="glyphicon glyphicon-log-out"></span>注销</a></li>
-            -->
-<!--
-            <li role="presentation" class="divider"></li>
-            <li class="parent">
-                <a href="#">
-                    <span class="glyphicon glyphicon-list"></span>
-                    <span data-toggle="collapse" href="#sub-item-1" class="icon">分类管理<em
-                            class="glyphicon glyphicon-s glyphicon-plus pull-right"></em></span>
-                </a>
-                <ul class="children collapse" id="sub-item-1">
-                    <li>
-                        <a onclick="js_show_page('/maintain/p/category/list')"><span
-                                class="glyphicon glyphicon-share-alt"></span>所有分类</a>
+        <div class="panel panel-black">
+            <div class="panel-title">
+                <h4>
 
-                    </li>
+                    <a data-toggle="collapse" href="#sub-item-1" data-parent="#accordion" >
+                        <span class="glyphicon glyphicon-list"></span>
+                        信息管理<em
+                            class="glyphicon glyphicon-s glyphicon-plus  pull-right"></em></a>
+                </h4>
+            </div>
 
-                </ul>
-            </li>
-            -->
-             <li class="parent">
-                <a href="#">
-                    <span class="glyphicon glyphicon-list"></span> <span data-toggle="collapse" href="#sub-item-4"
-                                                                         class="icon"> 单页管理<em
-                        class="glyphicon glyphicon-s glyphicon-plus  pull-right"></em></span>
-                </a>
-                <ul class="children collapse" id="sub-item-4">
+            <div class="children collapse" id="sub-item-1">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a onclick="js_show_page('/user_p/info')" style="cursor: pointer;">
+                                <span class="glyphicon glyphicon-user"></span>
+                                用户信息</a></li>
+                        <li class="list-group-item">
+                            <a onclick="js_show_page('/user_p/info')" style="cursor: pointer;">
+                                <span class="glyphicon glyphicon-cog"></span>会员状态</a>
+                        </li>
 
-                    <li><a onclick="js_show_page('/page/p/list')"><span class="glyphicon glyphicon-share-alt"></span>所有单页</a>
-                    </li>
-
-                </ul>
-            </li>
+                        <li class="list-group-item">
+                            <a onclick="js_show_page('/user_p/changepass')" style="cursor: pointer;">
+                                <span class="glyphicon glyphicon-pencil"></span>修改密码</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a onclick="js_show_page('/user_p/changeinfo')" style="cursor: pointer;">
+                            <span class="glyphicon glyphicon-pencil"></span>修改个人信息</a>
+                        </li>
+                        {% if userinfo.role[2] >= 'c' %}
+                        <li class="list-group-item"><a onclick="js_show_page('/user_p/find')"><span
+                                class="glyphicon glyphicon-info-sign"></span>查看所有用户</a>
+                        </li>
+                        {% end %}
 
 
-            <li class="parent ">
-                <a href="#">
-                    <span class="glyphicon glyphicon-list"></span> <span data-toggle="collapse" href="#sub-item-2"
-                                                                         class="icon"> 信息管理<em
-                        class="glyphicon glyphicon-s glyphicon-plus  pull-right"></em></span>
-                </a>
-                <ul class="children collapse" id="sub-item-2">
-                    <li><a onclick="js_show_page('/post_j/add_document')"><span
-                            class="glyphicon glyphicon-share-alt"></span>添加信息</a></li>
-                    <li><a onclick="js_show_page('/post_j/recent')"><span class="glyphicon glyphicon-share-alt"></span>所有信息</a>
-                   <!-- <li><a onclick="js_show_page('/post_j/recent_none')"><span class="glyphicon glyphicon-share-alt"></span>待翻译文档</a>
-                    </li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-                </ul>
-            </li>
+        <div class="panel panel-black">
+            <div class="panel-title">
+                <h4>
+
+                    <a data-toggle="collapse" href="#sub-item-4" data-parent="#accordion" >
+                        <span class="glyphicon glyphicon-list"></span>单页管理
+                        <em class="glyphicon glyphicon-s glyphicon-plus  pull-right"></em></a>
+
+                </h4>
+            </div>
+            <div class="children collapse" id="sub-item-4">
+                <div class="panel-body">
+
+                    <ul  class="list-group">
+
+                        <li  class="list-group-item">
+                            <a onclick="js_show_page('/page_p/_add')" style="cursor: pointer;"><span
+                                    class="glyphicon glyphicon-share-alt"></span>Add</a>
+                        </li>
+
+                        <li  class="list-group-item">
+                            <a onclick="js_show_page('/page_p/list')" style="cursor: pointer;"><span
+                                    class="glyphicon glyphicon-share-alt"></span>所有单页</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
 
 
-            <li class="parent ">
-                <a href="#">
-                    <span class="glyphicon glyphicon-list"></span>
-                    <span data-toggle="collapse" href="#sub-item-3"
-                                                                         class="icon"> 链接管理<em
-                        class="glyphicon glyphicon-s glyphicon-plus  pull-right"></em></span>
-                </a>
-                <ul class="children collapse" id="sub-item-3">
-                    <li><a onclick="js_show_page('/link/p/list')"><span
-                            class="glyphicon glyphicon-share-alt"></span>所有管理</a></li>
+        <div class="panel panel-black">
+            <div class="panel-title">
+                <h4>
 
-                </ul>
-            </li>
-            <li class="parent ">
-                <a href="#">
-                    <span class="glyphicon glyphicon-list"></span> <span data-toggle="collapse" href="#sub-item-5"
-                                                                         class="icon"> 评论管理<em
-                        class="glyphicon glyphicon-s glyphicon-plus  pull-right"></em></span>
-                </a>
-                <ul class="children collapse" id="sub-item-5">
-                    <li><a onclick="js_show_page('/reply/list')"><span
-                            class="glyphicon glyphicon-share-alt"></span>所有管理</a></li>
+                    <a data-toggle="collapse" href="#sub-item-2" data-parent="#accordion" >
+                        <span class="glyphicon glyphicon-list"></span>
+                        信息管理<em
+                            class="glyphicon glyphicon-s glyphicon-plus  pull-right"></em></a>
+                </h4>
+            </div>
+            <div class="children collapse" id="sub-item-2">
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a onclick="js_show_page('/post_j/add_document')" style="cursor: pointer;">
+                            <span class="glyphicon glyphicon-share-alt"></span>添加信息</a></li>
+                        {% for router, slug in router_post.items() %}
+                        <li class="list-group-item"><a onclick="js_show_page('/post_list/p_recent/{{router}}')" style="cursor: pointer;">
+                            <span class="glyphicon glyphicon-share-alt"></span>{{slug}}</a></li>
+                        {% end %}
 
-                </ul>
-            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-        </ul>
-        <div class="attribution">{% module torcms_copyright() %}</div>
+
     </div>
 </div>
+
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <span id="showCnt"></span>
 </div>

@@ -26,17 +26,17 @@
 
 
         <form method="post" action="" class="pure-form pure-form-aligned">
-            <input type=hidden name=slug value="{{ kwd['slug'] }}">
 
             <div class="pure-control-group">
                 <label for="title">{{ _('Title') }}</label>
                 <input type="text" id="title" name="title"/>
             </div>
 
+
             <div class="pure-control-group">
                 <label for="slug">{{ _('Slug') }}</label>
                 <input type="text" id="slug" name="slug" cols="76" readonly
-                       value="{{ kwd['slug'] }}"/>
+                       value=""/>
             </div>
 
             <div class="pure-control-group">
