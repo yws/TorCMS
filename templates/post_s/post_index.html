@@ -1,0 +1,52 @@
+{% extends "../theme/tpl_basic.html" %}
+{% block head %}
+<title>OSGeo中国中心 | 开放地理空间实验室</title>
+<meta name="keywords" content="GIS,地理信息系统,开源GIS,OSGeo,OpenLayers,MapServer,GDAL,GIS教程,WebGIS">
+<meta name="description" content="OSGeo中国中心实验室，关注开源GIS，开放数据">
+{% end %}
+{% block typebody %}
+
+<ol class="breadcrumb">
+    <li>当前位置: <a href="{% module site_url() %}">首页</a> </li>
+    <li><a href="/post/recent"> 文档列表</a></li>
+</ol>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="panel panel-info">
+
+            <div class="panel-heading">文档列表</div>
+            <ul class="list-group">
+                {% for x in view %}
+                <li class="list-group-item">
+                    <a href="/post/{{x.uid}}" title="{{x.title}}">
+                        {{ x.title }}
+                    </a>
+                    <span>{{ datetime.datetime.fromtimestamp(x.time_update).strftime('%Y-%m-%d %H:%M:%S')  }}</span>
+                </li>
+                {% end %}
+            </ul>
+
+            <div class="clear"></div>
+            <div>
+                <ul class="pagination">
+                    {% raw kwd['pager'] %}
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-info">
+
+            <div class="panel-heading">文档目录</div>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#"> 一级</a></li>
+                <li class="list-group-item"><a href="#"> 一级</a></li>
+                <li class="list-group-item"><a href="#"> 一级</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+{% end %}
