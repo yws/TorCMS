@@ -4,6 +4,63 @@
 <title>OSGeo中国中心 | 开放地理空间实验室</title>
 <meta name="keywords" content="GIS,地理信息系统,开源GIS,OSGeo,OpenLayers,MapServer,GDAL,GIS教程,WebGIS">
 <meta name="description" content="OSGeo中国中心实验室，关注开源GIS，开放数据">
+
+  <link rel="stylesheet" href="{{  static_url('js/jquery-ui-1.12.1/jquery-ui.css') }}">
+  <script src="{{  static_url('js/jquery-ui-1.12.1/jquery-ui.js') }}"></script>
+
+<style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+<script>
+
+
+    $(function () {
+        $("#sortable").sortable({
+            cursor: "move",
+            items: "li",                        //只是li可以拖动
+            opacity: 0.6,                       //拖动时，透明度为0.6
+            revert: true,                       //释放时，增加动画
+            update: function (event, ui) {       //更新排序之后
+
+                uu = ($('#sortable').sortable("toArray"));
+
+            $.each(uu, function (index, value) {
+
+                $.ajax({
+                    type: "POST",
+                    url: '/leaf/update_order/' + value + '/' + (100000 + index) + '/' ,
+                });
+
+            });
+
+            }
+        });
+    });
+
+    $(document).ready(function () {
+
+        $('#update').click(function () {
+            uu = ($('#sortable').sortable("toArray"));
+
+            $.each(uu, function (index, value) {
+
+                $.ajax({
+                    type: "POST",
+                    url: '/leaf/update_order/' + value + '/' + (100000 + index) + '/' ,
+                });
+
+            });
+
+        });
+
+    });
+
+
+</script>
+
+
 {% end %}
 
 {% block content %}
@@ -17,20 +74,29 @@
 
     <div class="panel-heading">{{ kwd['cat_name'] }}</div>
 
-    <ul class="list-group">
-
+    <div class="panel-body">
+    <ul class="list-group" id="sortable">
+        {%  set uu = 1 %}
         {% for x in infos %}
-        <li class="list-group-item">
-            <a href="{% module site_url() %}/post/{{x.uid}}" title="{{x.title}}">
+
+        <li class="list-group-item ui-state-default" id = {{ x.uid }}>
+            {% if userinfo and userinfo.role[1] < '0' %}
+            <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+            {%  end  %}
+            {{ uu }}
+            <a href="/leaf/{{x.uid}}" title="{{x.title}}">
                 {{ x.title}}
             </a>
 
         </li>
+        {%  set uu  = uu + 1 %}
         {% end %}
     </ul>
 
+    </div>
 
 </div>
+<a id="update">Update</a>
 <!--<div class="row">-->
     <!--<div class="col-sm-12">-->
         <!--{% module catalog_pager( kwd['cat_slug'], kwd['current_page'] ) %}-->

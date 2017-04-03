@@ -1,10 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "../theme/tpl_basic.html" %}
+{% block headbase %}
 
-</body>
-</html>
+<title>OSGeo中国中心,东北地区地理空间数据共享,开放地理空间实验室</title>
+<meta name="keywords" content="GIS,地理信息系统,开源GIS,OSGeo,地理数据共享,OpenLayers,MapServer,GIS教程,WebGIS">
+<meta name="description" content="OSGeo中国中心,东北地区地理空间数据共享,开放地理空间实验室,关注开源GIS技术,开放地理空间数据共享">
+
+
+{% end %}
+
+{% block typebody %}
+
+
+
+<div class="well well-sm">OSGeo中国中心，开放地理空间实验室，关注开源GIS技术，东北地区地理空间数据共享!</div>
+
+<div class="row">
+    <div class="col-sm-9"><div class="row">
+
+
+    <div class="col-sm-4">
+        <div class="panel panel-black">
+            {% module post_catalog_of('0100',slug=True, order=True) %}
+
+        </div>
+
+
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-black">
+            {% module post_catalog_of('0200',slug=True) %}
+        </div>
+
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-black">
+            {% module post_catalog_of('0400',slug=True ) %}
+        </div>
+    </div>
+
+
+</div></div>
+    <div class="col-sm-3">
+<div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    最多关注</h3>
+            </div>
+            <ul class="list-group" id="mostall">
+                    {% module post_most_view(5, with_date = False, with_catalog= False) %}
+                </ul>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    近期文章</h3>
+            </div>
+
+            <ul class="list-group">
+                {% module post_recent(5, with_date = False, with_catalog= False) %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<br>
+
+
+{% end %}
+{% block link %}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            友情链接
+        </h3>
+    </div>
+    <div class="panel-body">
+        <a href="http://www.igsnrr.cas.cn/" target="_blank">中国科学院地理科学与资源研究所</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="http://www.iga.ac.cn" target="_blank">中国科学院东北地理与农业生态研究所</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
+{% end %}
