@@ -15,7 +15,7 @@
 {% block content %}
 <ol class="breadcrumb">
     <li>Current location: <a href="{% module site_url() %}">Home</a></li>
-    <li>{% module the_category(postinfo.uid) %}</li>
+    <li>{% module the_category(postinfo.uid, order=True) %}</li>
     <li class="active">{{ postinfo.title }}</li>
 </ol>
 <div class="panel panel-default">
